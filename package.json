@@ -6,13 +6,20 @@
   "keywords": [],
   "author": "Ron Bravo",
   "license": "MIT",
+  "config": {
+    "port": 5000
+  },
   "scripts": {
+    "dev": "npx parcel ./src/index.html --port $npm_package_config_port ",
+    "build": "npx parcel build ./src/index.html ",
+    "start": "cd ./dist && npx live-server --port=$npm_package_config_port --no-browser",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "qiankun": "^2.0.26"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
-  },
-  "dependencies": {
-    "live-server": "^1.2.1"
   }
 }
