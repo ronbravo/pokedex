@@ -1,0 +1,33 @@
+{
+  // General info about the app settings.
+  name: 'Pokedex',
+
+  // Common paths for the apps to use.
+  paths: {
+    cdn: {
+      url: '',
+      base: '',
+    },
+  },
+
+  // The apps to load.
+  apps: [
+    {
+      app: {
+        main: true,
+        name: '@ronbravo/pkd-pokedex-vue2',
+        entry: '//localhost:5001',
+      },
+      config: {}
+    },
+
+    {
+      app: {
+        name: '@ronbravo/pkd-my-account-vue2',
+        entry: '//localhost:5002',
+        activeRule: '/',
+      },
+      config: {}
+    },
+  ]
+}

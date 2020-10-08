@@ -1,18 +1,38 @@
 {
   "name": "@ronbravo/pokedex",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "This is a simple example repo to test out working with multiple small frontend app.",
   "main": "index.js",
   "keywords": [],
   "author": "Ron Bravo",
   "license": "MIT",
+  "config": {
+    "port": 5000
+  },
+  "staticFiles": {
+    "staticPath": "public",
+    "watcherGlob": "**"
+  },
   "scripts": {
+    "app": "npm run watch",
+    "appold": "npm run watch && npm run app:server",
+    "app:server": "node server.js",
+    "build": "npx parcel build ./src/index.html --no-cache ",
+    "watch": "npx parcel watch ./src/index.html --no-cache ",
+    "start": "npm run app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4"
-  },
   "dependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "qiankun": "^2.0.26",
+    "redbird": "^0.10.0",
+    "zone.js": "^0.11.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "fs-extra": "^9.0.1",
+    "marked": "^1.2.0",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.5.0"
   }
 }
