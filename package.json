@@ -1,0 +1,18 @@
+{
+  "name": "@ronbravo/pokedex",
+  "version": "0.0.1",
+  "description": "This is a simple example repo to test out working with multiple small frontend app.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Ron Bravo",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
