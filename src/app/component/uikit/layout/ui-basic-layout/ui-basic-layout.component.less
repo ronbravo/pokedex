@@ -1,0 +1,40 @@
+@debug: true;
+
+.debug-border(@size, @color) when (@debug = true) {
+  border: @size solid @color;
+}
+
+.basic-layout {
+  .debug-border(5px, blue);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+
+  > .header, > .body, > .footer {
+    .debug-border(5px, green);
+  }
+
+  > .body {
+    flex-grow: 2;
+  }
+}
+
+.basic-layout > .header {
+}
+
+.basic-layout > .body {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+
+  .sidebar {
+    .debug-border(5px, #04ddcb);
+    min-width: 250px;
+    padding: 20px;
+  }
+
+  .main.area {
+    .debug-border(5px, #870ef8);
+    flex-grow: 2;
+  }
+}

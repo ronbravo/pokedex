@@ -1,0 +1,50 @@
+@import 'http://dev.pokedex.com/static/css/normalize.min.css';
+@import 'http://dev.pokedex.com/static/css/common.css';
+@import 'https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css';
+
+@import 'https://eds.studio/eds-styles/dist/eds-components.min.css';
+// @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+@debug: !true;
+
+.debug-border(@size, @color) when (@debug = true) {
+  border: @size solid @color;
+}
+
+.flex-fill() {
+  .debug-border(10px, blue);
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.app-pkd-main-ang8 {
+  .flex-fill();
+  // border: 10px solid blue;
+
+  align-items: stretch;
+  border: none;
+}
+
+.pkd-main-ang8 {
+  .flex-fill();
+  .debug-border(10px, red);
+  position: relative;
+
+  > * {
+    display: none;
+  }
+
+  > .layout {
+    .flex-fill();
+    .debug-border(10px, orange);
+    align-items: stretch;
+    flex-grow: 2;
+  }
+}

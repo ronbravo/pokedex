@@ -37,6 +37,8 @@ class Server {
       root = resolve ('.', 'dist', config.name);
       state.port = config.port;
       state.root = root;
+      state.file = 'index.html';
+      state.watch = [resolve('.', 'dist')];
 
       await fs.ensureDir (state.root);
       process.chdir (state.root);
