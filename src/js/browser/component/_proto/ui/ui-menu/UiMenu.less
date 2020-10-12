@@ -1,0 +1,13 @@
+// Sytle
+@debug: !true;
+
+.debug-border(@size, @color) when (@debug = true) {
+  border: @size solid @color;
+}
+
+.ui-menu {
+  &.vertical {
+    .debug-border(10px, #eb1dc4);
+    flex-grow: 2;
+  }
+}

@@ -1,0 +1,19 @@
+<div :class="className.sidebar">
+  <div class="eds-sidebar_#content">
+    <div class="eds-sidebar_.section">
+      <a v-for="item in items" :class="item.className">
+        <span class="eds-menu-item_#icon material-icons">{{ item.icon }}</span>
+        <span class="eds-menu-item_#label">{{ item.label }}</span>
+      </a>
+    </div>
+    <div class="eds-sidebar_.section"></div>
+  </div>
+
+  <div class="eds-sidebar_#controls">
+    <a href="#sidebar.html" :class="className.collapse">
+      <span class="eds-sidebar-toggle_#icon material-icons eds-sidebar_.when-open" aria-hidden="true" aria-label="Collapse Menu">first_page</span>
+      <span class="eds-sidebar-toggle_#icon material-icons eds-sidebar_.when-closed" aria-hidden="true" aria-label="Expand Menu">last_page</span>
+      <span class="eds-sidebar-toggle_#label eds-sidebar_.when-open">Collapse Menu</span>
+    </a>
+  </div>
+</div>
