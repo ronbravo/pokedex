@@ -1,4 +1,4 @@
-@debug: true;
+@debug: !true;
 
 .debug-border(@size, @color) when (@debug = true) {
   border: @size solid @color;
@@ -13,9 +13,23 @@
 }
 .body {
   .debug-border(5px, red);
+
+  // align-items: center;
   display: flex;
   flex-direction: row;
   flex-grow: 2;
+
+  h1 {
+    display: none;
+  }
+
+  > .main-body {
+    .debug-border(5px, #4ada26);
+
+    align-items: center;
+    display: flex;
+    flex-grow: 2;
+  }
 }
 .footer {
   .debug-border(5px, blue);

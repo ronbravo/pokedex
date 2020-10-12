@@ -1,5 +1,6 @@
 <div class="pkd-pokedex basic-layout layout">
   <div class="header">
+    <ui-app-header :info="sidebar"></ui-app-header>
   </div>
   <div class="body">
     <div class="sidebar">
@@ -7,6 +8,7 @@
     </div>
     <div class="main-body">
       <h1>{{ title }}</h1>
+      <div id="host-main-app-container-child-mount-area"></div>
     </div>
   </div>
   <div class="footer"></div>

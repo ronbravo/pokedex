@@ -17,8 +17,9 @@
     "watcherGlob": "**"
   },
   "scripts": {
-    "app": "parcel ./src/js/browser/index.html --port $npm_package_config_port",
-    "app:server": "cd dist && npx live-server --port=$npm_package_config_port",
+    "app": "npm run app:server",
+    "app:build": "parcel build ./src/js/browser/index.html --no-cache ",
+    "app:server": "node src/js/server/Server.js ",
     "app:watch": "parcel watch ./src/js/browser/index.html --no-cache ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

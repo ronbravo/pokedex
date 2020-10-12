@@ -1,7 +1,9 @@
-import UiMenu from '/component/_proto/ui/ui-menu/UiMenu.vue';
+  import UiAppHeader from '/component/_proto/ui/ui-app-header/UiAppHeader.vue';
+  import UiMenu from '/component/_proto/ui/ui-menu/UiMenu.vue';
 
 export default {
   components: {
+    UiAppHeader,
     UiMenu
   },
   data() {
