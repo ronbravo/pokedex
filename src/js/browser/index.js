@@ -1,39 +1,38 @@
 import mod from '$root/package.json';
 import Vue from 'vue/dist/vue.js';
 import App from '/component/simple/app/App.vue';
-import { HostApp } from '/parcel/host-app/HostApp';
+import { HostAppClient } from '/parcel/host-app-client/HostAppClient';
 
 // Render the app to the page.
 const render = () => {
+  let id;
+
+  id = HostAppClient.kebabAppName ({ id: mod.name });
   const vm = new Vue ({
-    el: '#app',
+    el: `#${id}`,
     template: '<App/>',
     components: { App },
   });
+  HostAppClient.show ({ id });
   return Promise.resolve ();
 }
 
-// Hook the app into the micro frontend qiankun host.
-(global => {
-  global [mod.name] = {
+// Render the app if qiankun is not detected.
+if (window.__POWERED_BY_QIANKUN__) {
+  // Hook the app into the micro frontend qiankun host.
+  HostAppClient.register ({
+    name: mod.name,
     bootstrap: () => {
-      console.log (`- bootstrap: ${mod.name}`);
-      HostApp.setup ();
       return Promise.resolve ();
     },
     mount: () => {
-      console.log (`- mount: ${mod.name}`);
-      HostApp.show ();
       return render ();
     },
     unmount: () => {
-      console.log (`- unmount: ${mod.name}`);
       return Promise.resolve ();
     },
-  };
-}) (window);
-
-// Render the app if qiankun is not detected.
-if (!window.__POWERED_BY_QIANKUN__) {
+  });
+}
+else {
   render ();
 }

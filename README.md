@@ -1,4 +1,4 @@
-# Pokedex Vue2
+# Pokedex: My Account Vue2
 
 The Pokedex main micro app used to manage the loading, mounting, and un-mounting of other micro apps.
 
