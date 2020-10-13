@@ -53,12 +53,15 @@ class Setup {
     }
   }
 
-  static async removeSetupScript () {
+  static async removeSetupScript ({ state }) {
     let dest, json;
 
     delete pkg.scripts ['app:setup'];
+    pkg.name = state.fullNpmName;
+    pkg.config.port = state.port;
+    
     dest = resolve ('.', 'package.json');
-    json = JSON.stringify(pkg, null, 2);
+    json = JSON.stringify (pkg, null, 2);
     await fs.writeFile (dest, json, 'utf8');
   }
 
@@ -70,11 +73,18 @@ class Setup {
       state = await fs.readFile (resolve ('.', '.app', 'config.json5'), 'utf8');
       state = JSON5.parse (state);
 
+      state.host.domain = state.host.base;
+      if (state.host.port) {
+        state.host.domain = `${state.host.domain}:${state.host.port}`;
+      }
+      state.hostDomain = state.host.domain;
+
       org = '';
       if (state.org) {
         org = state.org + '/'
         state.fullName = `${org}${state.name}`;
         state.fullNpmName = `@${org}${state.name}`;
+        state.nameSnakeCase = voca.snakeCase(state.name);
       }
       else {
         state.fullName = `${org}${state.name}`;

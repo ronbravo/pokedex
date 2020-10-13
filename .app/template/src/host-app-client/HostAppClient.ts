@@ -23,15 +23,15 @@ export class HostAppClient {
 
       global [name] = {
         bootstrap: function (args) {
-          console.log (`%c BOOTSTRAP:%c ${name}`, style, reset);
+          console.log (`%c BOOTSTRAP:%c ${{name}}`, style, reset);
           return bootstrap (args);
         },
         mount: function (args) {
-          console.log (`%c MOUNT:%c ${name}`, style, reset);
+          console.log (`%c MOUNT:%c ${{name}}`, style, reset);
           return mount (args);
         },
         unmount: function (args) {
-          console.log (`%c UNMOUNT:%c ${name}`, style, reset);
+          console.log (`%c UNMOUNT:%c ${{name}}`, style, reset);
           return unmount (args);
         },
       };

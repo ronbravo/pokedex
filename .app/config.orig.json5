@@ -1,9 +1,15 @@
 {
   // Information about the app.
-  title: 'Pokedex: App Base Ang5',
+  title: 'Pokedex: App Base Angular 5',
   org: 'ronbravo',
   name: 'pkd-app-base-ang5',
   port: 5001,
+
+  // Host app info.
+  host: {
+    base: 'http://localhost',
+    port: 5000,
+  },
 
   // Contains the settings for local dev proxies
   // This uses the redbird package: https://www.npmjs.com/package/@jchip/redbird

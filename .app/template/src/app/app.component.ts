@@ -3,7 +3,8 @@ import { AfterViewInit, Component } from '@angular/core';
 @Component({
   selector: 'app-{name}',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.less'],
+  host: { id: 'app-{name}', class: 'micro-app' },
 })
 export class AppComponent implements AfterViewInit {
   title = '{title}';

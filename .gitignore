@@ -5,6 +5,10 @@
 /dist-server
 /tmp
 /out-tsc
+/.app/config.json5
+/dist.tgz
+/.ng_pkg_build
+/*.tgz
 
 # dependencies
 /node_modules

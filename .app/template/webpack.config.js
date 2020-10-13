@@ -163,7 +163,7 @@ module.exports = {
     // NOTE: Micro App Adjustments
     library: `{name}-[name]`,
     libraryTarget: 'umd',
-    jsonpFunction: `webpackJsonp_{name}`,
+    jsonpFunction: `webpackJsonp_{nameSnakeCase}`,
   },
   
   // NOTE: Micro App Adjustments

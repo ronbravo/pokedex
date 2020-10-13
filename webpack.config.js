@@ -159,16 +159,6 @@ module.exports = {
     "filename": "[name].bundle.js",
     "chunkFilename": "[id].chunk.js",
     "crossOriginLoading": false,
-
-    // NOTE: Changes here.
-    library: `pkd-app-base-ang5-[name]`,
-    libraryTarget: 'umd',
-    jsonpFunction: `webpackJsonp_pkd-app-base-ang5`,
-  },
-
-  // NOTE: Changes here.
-  "externals": {
-    'zone.js': 'Zone',
   },
   "module": {
     "rules": [
