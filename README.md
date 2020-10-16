@@ -1,4 +1,4 @@
-# App Base Angular8
+# Pokedex: Pokemon Inspector Angular 8
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20. It was built for the [Pokedex](https://github.com/ronbravo/pokedex) micro app repo but in theory can be used as a boilerplate for any [qiankun](https://qiankun.umijs.org/) or [single-spa](https://single-spa.js.org/) compatible project.
 
@@ -14,24 +14,6 @@ These are the npm or yarn commands available for the project:
 * `npm run app:extra` or `yarn app:extra` - Install additional testing tools like Jest, Jsdom, and Cypress.
 * `npm run app:watch` or `yarn app:watch` - Build the project and watch for changes to the files.
 
-
-## Copy Project as Base
-
-To copy this project as a base for a new project, run the following command:
-
-```
-// Basic format:
-git clone --single-branch --branch <branchname> <remote-repo> <project-name>
-
-// Examples
-git clone --single-branch --branch boilerplate/app-base-ang8 git@github.com:ronbravo/pokedex.git myproject-01
-git clone --single-branch --branch boilerplate/app-base-vue2 git@github.com:ronbravo/pokedex.git myproject-02
-git clone --single-branch --branch boilerplate/app-base-react16 git@github.com:ronbravo/pokedex.git myproject-02
-git clone --single-branch --branch boilerplate/app-base-react16 git@github.com:ronbravo/pokedex.git myproject-02
-```
-
-Once that is done `cd` into the new project and follow the instructions below in the **Setup Base App** area.
-
 ## Qiankun and Single Spa Framework
 
 * **ZoneJs**
@@ -40,13 +22,12 @@ Once that is done `cd` into the new project and follow the instructions below in
     * [Sample Single Spa Index File](https://github.com/single-spa/single-spa-angular/blob/60b88f90d90a6bcbe7e1d1e751c521c48e39f705/README.md#check-if-it-works)
 * For angular 8, make sure to use `webpack-merge` version `4.2.2` as per [this post](https://github.com/netlify/netlify-lambda/issues/249#issuecomment-660559206).
 
-## Setup Base App
+### Setup Base App
 
 **IMPORTANT:** Run the steps below before installing any packages.
 
 The [Base Angular App](https://github.com/ronbravo/pokedex/tree/boilerplate/app-base-ang8) is provide as a boilerplate with the bare minimal setup to create a new project and (hopefully) most of the kinks with configuration worked out. If you run into a problem please [create an issue](https://github.com/ronbravo/pokedex/issues) ticket.
 
-* Copy the `.app/config.orig.json5` file to `.app/config.json5`.
 * Modify the `.app/config.json5` file. Change things like the org name, project name, port, etc.
 * Run the command `npm run app:setup` or `yarn app:setup`. This will copy over the needed files and update the project name.
 
@@ -54,7 +35,7 @@ The [Base Angular App](https://github.com/ronbravo/pokedex/tree/boilerplate/app-
 
 Once the project has been configured to work as a micro app, then just run `npm install` or `yarn`. This will just kick off the normal package install process for the base app.
 
-### Extra
+#### Extra
 
 If desired the project can install extra item packages for making the dev testing experience a little better. Run the command `npm run app:extra` or `yarn app:extra` to add the following packages:
 
@@ -80,7 +61,7 @@ Qiankun uses the Single SPA Framework and so it requires a few files to be updat
 * `package.json` - Update to npm scripts for adding a `dev` and modifying `build`.
 * `.app/server.js` - A dev server intended to run on the built `/dist` file of the project and is an alternative to the webpack dev server Angular runs.
 
-## TODO:
+### TODO:
 
 * Update the `.app/server.js` to be able to use webpack dev-server [proxy format](https://webpack.js.org/configuration/dev-server/#devserverproxy).
 

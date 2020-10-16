@@ -5,7 +5,6 @@
   "scripts": {
     "app": "npm run app:server & npm run build -- --watch",
     "app:server": "node .app/server.js ",
-    "app:setup": "node .app/setup.js ",
     "app:extra": "npm install --save-dev cypress jest jsdom",
     "ng": "ng",
     "start": "ng serve --port=5001",
