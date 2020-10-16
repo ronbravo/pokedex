@@ -1,13 +1,28 @@
 {
-  "name": "@ronbravo/pkd-basic-js",
+  "name": "@ronbravo/pkd-host-js",
   "version": "1.0.0",
   "description": "A bare bones example of developing a Pokedex micro frontend with the QianKun framework.",
   "main": "index.js",
   "keywords": [],
   "author": "Ron Bravo",
   "license": "MIT",
+  "staticFiles": {
+    "staticPath": "public",
+    "watcherGlob": "**"
+  },
   "scripts": {
-    "start": "npx liver-server --port=5000",
+    "app:clean": "rm -fr .cache dist",
+    "app:build": "npm run app:clean && npx parcel build ./src/js/browser/index.html ",
+    "app:watch": "npm run app:clean && npx parcel watch ./src/js/browser/index.html ",
+    "start": "node ./src/js/server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "qiankun": "^2.1.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.5.0"
   }
 }
