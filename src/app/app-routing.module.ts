@@ -6,8 +6,10 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { EmptyRouteComponent } from './empty-route/empty-route.component';
 
 const routes: Routes = [
-  { path: 'profile', component: ProfileComponent },
-  { path: 'billing', component: BillingComponent },
+  { path: 'account', children: [
+    { path: 'billing', component: BillingComponent },
+    { path: 'profile', component: ProfileComponent },
+  ]},
   { path: '**', component: EmptyRouteComponent },
 ];
 
