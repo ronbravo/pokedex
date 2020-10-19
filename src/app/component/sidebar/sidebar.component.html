@@ -1,0 +1,27 @@
+<div class="eds-sidebar eds-sidebar.open eds-sidebar.raspberry" style="height: 300px;">
+  <div class="eds-sidebar_#content">
+    <div class="eds-sidebar_.section">
+      <a *ngFor="let item of menus" class="eds-menu-item eds-menu-item.raspberry">
+        <i class="eds-menu-item_#icon material-icons">{{ item.icon }}</i>
+        <span class="eds-menu-item_#label">{{ item.label }}</span>
+      </a>
+    </div>
+
+    <div class="eds-sidebar_.section"></div>
+  </div>
+
+  <div class="eds-sidebar_#controls">
+    <a href="#sidebar.html"
+      class="eds-sidebar_.eds-sidebar-toggle eds-sidebar.open_.eds-sidebar-toggle eds-sidebar-toggle eds-sidebar-toggle.raspberry">
+      <i class="eds-sidebar-toggle_#icon material-icons eds-sidebar_.when-open" aria-hidden="true"
+        aria-label="Collapse Menu">
+        first_page
+      </i>
+      <i class="eds-sidebar-toggle_#icon material-icons eds-sidebar_.when-closed" aria-hidden="true"
+        aria-label="Expand Menu">
+        last_page
+      </i>
+      <span class="eds-sidebar-toggle_#label eds-sidebar_.when-open">Collapse Menu</span>
+    </a>
+  </div>
+</div>

@@ -1,12 +1,11 @@
 {
-  "name": "@ronbravo/pkd-app-base-ang8",
+  "name": "@ronbravo/pkd-main-ang8",
   "version": "0.1.0",
   "private": true,
   "config": {
     "port": 5001
   },
   "scripts": {
-    "app:setup": "node .app/setup.js ",
     "_app:setup": "node .app/setup.js ",
     "ng": "ng",
     "start": "npx ng serve --port=$npm_package_config_port",

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app-base-ang8": {
+    "pkd-main-ang8": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,9 +11,9 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/app-base-ang8",
+            "outputPath": "dist/pkd-main-ang8",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -26,7 +26,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "./extra-webpack.config.js"
+            }
           },
           "configurations": {
             "production": {
@@ -61,20 +64,20 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "app-base-ang8:build"
+            "browserTarget": "pkd-main-ang8:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-base-ang8:build:production"
+              "browserTarget": "pkd-main-ang8:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-base-ang8:build"
+            "browserTarget": "pkd-main-ang8:build"
           }
         },
         "test": {
@@ -111,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app-base-ang8:serve"
+            "devServerTarget": "pkd-main-ang8:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app-base-ang8:serve:production"
+              "devServerTarget": "pkd-main-ang8:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "app-base-ang8"
+  "defaultProject": "pkd-main-ang8"
 }

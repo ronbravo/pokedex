@@ -1,0 +1,61 @@
+html, body {
+  align-items: stretch;
+  /* border: 5px solid blue; */
+  box-sizing: border-box;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.host-app-pkd-main-ang8 {
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+#main-logo img {
+  height: 35px;
+}
+
+.main-app {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.main-header, .main-body, .main-footer {
+  /* border: 5px solid red; */
+  box-sizing: border-box;
+}
+
+.main-body {
+  display: flex;
+  flex-grow: 2;
+}
+
+#main-sidebar {
+  /* border: 5px solid green; */
+  display: flex;
+  flex-direction: column;
+}
+
+#main-sidebar .eds-sidebar {
+  flex-grow: 2;
+}
+
+#main-content {
+  border: 5px solid cyan;
+  display: flex;
+  flex-grow: 2;
+}

@@ -1,0 +1,19 @@
+
+:host, .host-ui-sidebar {
+  /* border: 5px solid red; */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.eds-sidebar {
+  /* border: 5px solid red; */
+  flex-grow: 2;
+}
+
+a {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
