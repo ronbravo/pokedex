@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "config": {
-    "port": 5001
+    "port": 5002
   },
   "scripts": {
     "_app:setup": "node .app/setup.js ",
     "ng": "ng",
-    "start": "npx ng serve --port=$npm_package_config_port",
+    "start": "npx ng serve --port=$npm_package_config_port --no-live-reload",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

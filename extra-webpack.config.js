@@ -7,9 +7,9 @@ module.exports = (angularWebpackConfig, options) => {
 
   const singleSpaConfig = {
     output: {
-      library: `$pkd-my-account-ang8-[name]`,
+      library: `pkd-my-account-ang8-[name]`,
       libraryTarget: 'umd',
-      jsonpFunction: `webpackJsonp_$pkd-my-account-ang8`,
+      jsonpFunction: `webpackJsonp_pkd_my_account_ang8`,
     },
     externals: {
       'zone.js': 'Zone',
