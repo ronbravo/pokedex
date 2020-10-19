@@ -11309,22 +11309,21 @@ var HostApp = /*#__PURE__*/function () {
                       entry: '//localhost:5002',
                       menu: {
                         icon: 'account_circle',
-                        label: 'My Account',
+                        label: 'ABC My Account',
                         url: '/account'
-                      },
-                      // entry: { scripts: ['//localhost:7100/main.js'] },
-                      activeRule: '/account'
-                    }, {
-                      name: '@ronbravo/pkd-pokemon-inspector-ang8',
-                      entry: '//localhost:5003',
-                      menu: {
-                        icon: 'pets',
-                        label: 'Pokemon Inspector',
-                        url: '/pokemon'
-                      },
-                      // entry: { scripts: ['//localhost:7100/main.js'] },
-                      activeRule: '/pokemon'
-                    }]
+                      } // entry: { scripts: ['//localhost:7100/main.js'] },
+                      // container: '#ronbravo-pkd-my-account-ang8',
+                      // activeRule: '/account',
+
+                    } // {
+                    //   name: '@ronbravo/pkd-pokemon-inspector-ang8',
+                    //   entry: '//localhost:5003',
+                    //   menu: { icon: 'pets', label: 'Pokemon', url: '/pokemon' },
+                    //   // entry: { scripts: ['//localhost:7100/main.js'] },
+                    //   // container: '#ronbravo-pkd-my-account-ang8',
+                    //   // activeRule: '/pokemon',
+                    // },
+                    ]
                   };
                 }));
 
@@ -11384,6 +11383,8 @@ var HostApp = /*#__PURE__*/function () {
                   parent.appendChild(div); // Register the app.
 
                   item.container = "#".concat(id); // pre mount dom.
+
+                  item.activeRule = item.menu.url; // Set when the app shows.
 
                   main.apps.push(item);
                 }); // Register the micro apps.
