@@ -1,13 +1,12 @@
 <div class="eds-sidebar eds-sidebar.open eds-sidebar.raspberry" style="height: 300px;">
   <div class="eds-sidebar_#content">
     <div class="eds-sidebar_.section">
-      <a *ngFor="let item of menus" class="eds-menu-item eds-menu-item.raspberry">
+      <a *ngFor="let item of menus" [routerLink]="item.url" class="eds-menu-item eds-menu-item.raspberry">
         <i class="eds-menu-item_#icon material-icons">{{ item.icon }}</i>
         <span class="eds-menu-item_#label">{{ item.label }}</span>
       </a>
     </div>
-
-    <div class="eds-sidebar_.section"></div>
+    <!-- <div class="eds-sidebar_.section"></div> -->
   </div>
 
   <div class="eds-sidebar_#controls">

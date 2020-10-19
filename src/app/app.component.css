@@ -55,6 +55,7 @@ body {
 }
 
 #main-content {
+  background-color: #fff;
   border: 5px solid cyan;
   display: flex;
   flex-grow: 2;

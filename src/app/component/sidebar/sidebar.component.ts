@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ui-sidebar',
@@ -7,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
   host: { class: 'host-ui-sidebar' },
 })
 export class SidebarComponent implements OnInit {
-  menus = [
-    { icon: 'home', label: 'Home' },
-  ];
+  @Input() menus = [];
 
   constructor() { }
 

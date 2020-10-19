@@ -7,19 +7,6 @@
 
       <h1 class="eds-primary-header_#title">CrossCore</h1>
 
-      <nav class="eds-primary-header_.section" role="navigation" aria-label="Header">
-        <a href="javascript:void(0)"
-          class="eds-primary-header_.eds-primary-nav-item eds-primary-nav-item eds-primary-nav-item.eds-link eds-link eds-link.selected">
-          <i class="eds-primary-nav-item_#icon material-icons" aria-hidden="true">home</i>
-          <span class="eds-primary-nav-item_#label">Dashboard</span>
-        </a>
-        <a href="javascript:void(0)"
-          class="eds-primary-header_.eds-primary-nav-item eds-primary-nav-item eds-primary-nav-item.dropdown eds-primary-nav-item.eds-link eds-link"
-          aria-haspopup="true">
-          <span class="eds-primary-nav-item_#label">Tasks</span>
-        </a>
-      </nav>
-
       <nav class="eds-primary-header_.section" role="navigation" aria-label="Control Center">
         <a href="javascript:void(0)"
           class="eds-primary-header_.eds-primary-nav-item eds-primary-nav-item eds-primary-nav-item.eds-link eds-link"
@@ -37,7 +24,7 @@
   </div>
   <div class="main-body">
     <div id="main-sidebar" class="main-sidebar">
-      <ui-sidebar></ui-sidebar>
+      <ui-sidebar [menus]="menus"></ui-sidebar>
     </div>
     <div id="main-content">
       <div id="mico-app-mount-area"></div>
