@@ -35,13 +35,17 @@ export class AppComponent {
     }
 
     // Add event listeners.
+
+    // Mount the child once it's ready.
     this.listener.on ('main.app.ready', ({ id }) => {
       const parent = document.querySelector ('#mico-app-mount-area');
       if (parent) {
+        console.log ('data:', id);
         id = 'ronbravo-pkd-my-account-ang8';
         const dom = document.querySelector (`#${id}`);
-        parent.appendChild(dom);
-        console.log ('data:', id);
+        if (dom) {
+          parent.appendChild(dom);
+        }
       }
     });
   }
