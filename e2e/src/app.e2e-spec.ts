@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('app-base-ang8 app is running!');
+    expect(page.getTitleText()).toEqual('pkd-my-account-ang8 app is running!');
   });
 
   afterEach(async () => {
