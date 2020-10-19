@@ -30,7 +30,7 @@ git clone --single-branch --branch basic/pkd-app-base-ang8 git@github.com:ronbra
 A simple account manager.
 
 ```
-git clone --single-branch --branch boilerplate/app-base-ang8 git@github.com:ronbravo/pokedex.git app/ang8/pkd-my-account-ang8
+git clone --single-branch --branch basic/pkd-my-account-ang8 git@github.com:ronbravo/pokedex.git app/ang8/pkd-my-account-ang8
 ```
 
 #### Pokemon Inspector
@@ -38,5 +38,5 @@ git clone --single-branch --branch boilerplate/app-base-ang8 git@github.com:ronb
 A simple pokemon inspector.
 
 ```
-git clone --single-branch --branch boilerplate/app-base-ang8 git@github.com:ronbravo/pokedex.git app/ang8/pkd-pokemon-inspector-ang8
+git clone --single-branch --branch basic/pkd-pokemon-inspector-ang8 git@github.com:ronbravo/pokedex.git app/ang8/pkd-pokemon-inspector-ang8
 ```

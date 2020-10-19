@@ -11261,6 +11261,158 @@ var _prefetch = require("./prefetch");
 "use strict";
 
 var _qiankun = require("qiankun");
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// Store ref objects of the main app.
+var main = {
+  apps: []
+}; // Bare bones HostApp to load and mount
+// the other apps.
+
+var HostApp = /*#__PURE__*/function () {
+  function HostApp() {
+    _classCallCheck(this, HostApp);
+  }
+
+  _createClass(HostApp, null, [{
+    key: "getConfig",
+    value: function () {
+      var _getConfig = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                return _context.abrupt("return", fetch('https://pokeapi.co/api/v2/ability/4').then(function (res) {
+                  return res.json();
+                }).then(function (json) {
+                  // NOTE: Return temporary data...
+                  return {
+                    main: {
+                      name: '@ronbravo/pkd-base-ang8',
+                      entry: '//localhost:5001',
+                      container: '#host-main-app-mount',
+                      props: {
+                        slogan: 'Hello Qiankun'
+                      }
+                    },
+                    apps: [{
+                      name: '@ronbravo/pkd-my-account-ang8',
+                      entry: '//localhost:5002',
+                      menu: {
+                        icon: 'account_circle',
+                        label: 'My Account',
+                        url: '/account'
+                      },
+                      // entry: { scripts: ['//localhost:7100/main.js'] },
+                      activeRule: '/account'
+                    }, {
+                      name: '@ronbravo/pkd-pokemon-inspector-ang8',
+                      entry: '//localhost:5003',
+                      menu: {
+                        icon: 'pets',
+                        label: 'Pokemon Inspector',
+                        url: '/pokemon'
+                      },
+                      // entry: { scripts: ['//localhost:7100/main.js'] },
+                      activeRule: '/pokemon'
+                    }]
+                  };
+                }));
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function getConfig() {
+        return _getConfig.apply(this, arguments);
+      }
+
+      return getConfig;
+    }()
+  }, {
+    key: "setMainAppAsReady",
+    value: function setMainAppAsReady(_ref) {
+      var app = _ref.app,
+          listener = _ref.listener;
+      main.app = app;
+      main.listener = listener;
+      console.log('Main app has been set');
+      return main;
+    }
+  }, {
+    key: "getMainAppListener",
+    value: function getMainAppListener() {
+      return main.listener;
+    }
+  }, {
+    key: "start",
+    value: function () {
+      var _start2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+        var config, parent;
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return HostApp.getConfig();
+
+              case 2:
+                config = _context2.sent;
+                // Load the main app.
+                (0, _qiankun.loadMicroApp)(config.main); // Go through each micro app and create a pre
+                // mount point for it in the ui.
+
+                parent = document.querySelector('#host-micro-app-pre-mount');
+                config.apps.forEach(function (item) {
+                  // Create mount point.
+                  var div = document.createElement('div');
+                  var id = item.name.replace('@', '').replace('/', '-');
+                  div.id = id;
+                  parent.appendChild(div); // Register the app.
+
+                  item.container = "#".concat(id); // pre mount dom.
+
+                  main.apps.push(item);
+                }); // Register the micro apps.
+
+                (0, _qiankun.registerMicroApps)(main.apps); // Start Single SPA.
+
+                (0, _qiankun.start)();
+
+              case 8:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      function start() {
+        return _start2.apply(this, arguments);
+      }
+
+      return start;
+    }()
+  }]);
+
+  return HostApp;
+}();
+
+window.__hostapp__ = HostApp;
+HostApp.start();
 },{"qiankun":"../../../node_modules/qiankun/es/index.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -11289,7 +11441,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60773" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55276" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

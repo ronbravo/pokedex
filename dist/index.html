@@ -3,11 +3,25 @@
 <head>
   <meta charset="utf-8">
   <title>Pokedex: Basic</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.9.1/zone.min.js"></script>
   <link href="http://localhost:5000/static/css/normalize.min.css" rel="stylesheet" type="text/css">
   <link href="http://localhost:5000/static/css/common.css" rel="stylesheet" type="text/css">
 </head>
+<style>h1 { display: none; }
+  #host-micro-app-pre-mount {
+    background-color: #fff;
+    border: 5px solid green;
+    bottom: 0;
+    /* display: none; */
+    height: 200px;
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+  }</style>
 <body>
-  <h1>Pokedex: Basic Example</h1>
+  <h1 id="host-title">Pokedex: Basic Example</h1>
   <script src="/browser.e31bb0bc.js"></script>
+  <div id="host-main-app-mount"></div>
+  <div id="host-micro-app-pre-mount"></div>
 </body>
 </html>
