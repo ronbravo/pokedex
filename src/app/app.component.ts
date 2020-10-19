@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 import { HttpClient, HttpResponse } from '@angular/common/http';
@@ -46,7 +46,7 @@ interface Pokemon {
   encapsulation: ViewEncapsulation.None
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'Pokedex: Pokemon Inspector Angular 8';
   pokedex: Pokemon[] = [];
   selectedPokemon: Pokemon;
@@ -74,6 +74,25 @@ export class AppComponent implements OnInit {
       });
     }
     console.log(this.pokedex);
+  }
+
+  ngAfterViewInit() {
+    // // TODO: Probably place this in a service...
+    // // Get a references to the host app. Also have
+    // // host app cache events if main app hasn't loaded
+    // // yet. TEMP for now is to delay.
+    // setTimeout(() => {
+    //   const hostApp = window['__hostapp__'];
+    //   if (hostApp) {
+    //     const listener = hostApp.getMainAppListener();
+    //     if (listener) {
+    //       listener.emit('main.app.ready', {
+    //         title: this.title,
+    //         id: 'ronbravo-pkd-pokemon-inspector-ang8',
+    //       });
+    //     }
+    //   }
+    // }, 1000);
   }
 
   /**

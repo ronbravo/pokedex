@@ -16,12 +16,12 @@
         </thead>
         <tbody>
           <tr *ngFor="let pokemon of pokedex">
-            <td>{{pokemon.id}}</td>
-            <td><img src='{{pokemon.sprites.front_default}}' /></td>
-            <td>{{pokemon.name}}</td>
-            <td style="text-align: center; width: 130px">{{pokemon.base_experience}}</td>
-            <td>{{pokemon.abilities[0].ability.name}}</td>
-            <td><button id='{{pokemon.id}}' class="uk-button uk-button-primary" type="button" (click)="showMoreDetails($event.target.id)">More Details</button></td>
+            <td *ngIf="pokemon">{{ pokemon.id}}</td>
+            <td *ngIf="pokemon"><img src='{{pokemon.sprites.front_default}}' /></td>
+            <td *ngIf="pokemon">{{pokemon.name}}</td>
+            <td *ngIf="pokemon" style="text-align: center; width: 130px">{{pokemon.base_experience}}</td>
+            <td *ngIf="pokemon">{{pokemon.abilities[0].ability.name}}</td>
+            <td *ngIf="pokemon"><button id='{{pokemon.id}}' class="uk-button uk-button-primary" type="button" (click)="showMoreDetails($event.target.id)">More Details</button></td>
           </tr>
         </tbody>
       </table>
