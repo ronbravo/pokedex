@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "config": {
-    "port": 5001
+    "port": 5002
   },
   "scripts": {
     "_app:setup": "node .app/setup.js ",
