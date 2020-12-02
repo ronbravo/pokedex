@@ -1,7 +1,7 @@
 const liveServer = require("live-server");
 
 const options = {
-    port: 5000,
+    port: 5001,
     cors: true,
     open: false,
     root: 'dist',

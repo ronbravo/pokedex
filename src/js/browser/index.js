@@ -16,8 +16,10 @@ class HostApp {
         // NOTE: Return temporary data...
         return {
           main: {
-            name: '@ronbravo/pkd-base-ang8',
-            entry: '//localhost:5001',
+            // name: '@ronbravo/pkd-base-ang8',
+            name: '@ronbravo/pkd-main-ang8',
+            entry: '//localhost:5002',
+            // entry: '//localhost:5001',
             container: '#host-main-app-mount',
             props: {
               slogan: 'Hello Qiankun'
@@ -26,7 +28,7 @@ class HostApp {
           apps: [
             {
               name: '@ronbravo/pkd-my-account-ang8',
-              entry: '//localhost:5002',
+              entry: '//localhost:5003',
               menu: { icon: 'account_circle', label: 'ABC My Account', url: '/account' },
               // entry: { scripts: ['//localhost:7100/main.js'] },
               // container: '#ronbravo-pkd-my-account-ang8',
