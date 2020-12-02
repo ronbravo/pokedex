@@ -1,55 +1,19 @@
-<div style="width: 100%; justify-content: center; display: flex;">
+<div>
+  <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+        <li class="uk-active"><a routerLink="/pokemon">Home</a></li>
+        <li class="uk-active"><a routerLink="/pokemon/list">Pokemon List</a></li>
+      </ul>
+    </div>
+  </nav>
+  <h1 class="uk-heading-medium">Pokedex</h1>
+  <router-outlet></router-outlet>
+</div>
+<!-- <div style="width: 100%; justify-content: center; display: flex;">
   <div *ngIf="!showDetails" style="width: 1000px; height: 1000px">
     <h1 class="uk-heading-medium">Pokedex</h1>
     <div style="height: 900px; overflow-y: scroll">
-      <table class="uk-table uk-table-striped uk-table-middle uk-table-divider">
-        <caption></caption>
-        <thead>
-            <tr>
-              <th>Id</th>
-              <th>Image</th>
-              <th>Name</th>
-              <th style="text-align: center;">Base Experience</th>
-              <th>Primary Ability</th>
-              <th></th>
-            </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let pokemon of pokedex">
-            <td *ngIf="pokemon">{{ pokemon.id}}</td>
-            <td *ngIf="pokemon"><img src='{{pokemon.sprites.front_default}}' /></td>
-            <td *ngIf="pokemon">{{pokemon.name}}</td>
-            <td *ngIf="pokemon" style="text-align: center; width: 130px">{{pokemon.base_experience}}</td>
-            <td *ngIf="pokemon">{{pokemon.abilities[0].ability.name}}</td>
-            <td *ngIf="pokemon"><button id='{{pokemon.id}}' class="uk-button uk-button-primary" type="button" (click)="showMoreDetails($event.target.id)">More Details</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <button routerLink="/pokemon/list">Pokemon List</button>
   </div>
-  <div *ngIf="showDetails" style="width: 100%; justify-content: center; display: flex;" >
-    <div class="uk-card uk-card-default uk-card-body" style="width: 800px; height: 650px;">
-      <div class="uk-card-header">
-        <div class="uk-grid-large uk-flex-middle" uk-grid>
-            <div class="uk-width-auto">
-                <img class="uk-border-circle" width="150" height="150" src='{{selectedPokemon.sprites.front_default}}'>
-            </div>
-            <div class="uk-width-expand">
-                <h3 class="uk-card-title uk-margin-remove-bottom">{{selectedPokemon.name}}</h3>
-                <p class="uk-text-meta uk-margin-remove-top">Base Experience: {{selectedPokemon.base_experience}}</p>
-            </div>
-        </div>
-      </div>
-      <div class="uk-card-body">
-          <p><b>Height:</b>&nbsp;&nbsp;{{selectedPokemon.height}}</p>
-          <p><b>Weight:</b>&nbsp;&nbsp;{{selectedPokemon.weight}}</p>
-          <p><b>Location Area Encounters:</b>&nbsp;&nbsp;{{selectedPokemon.location_area_encounters}}</p>
-          <p><b>Abilities:</b>&nbsp;&nbsp;{{selectedPokemon.abilities[0].ability.name}}, {{selectedPokemon.abilities[1].ability.name}}</p>
-          <p><b># of Moves:</b>&nbsp;&nbsp;{{selectedPokemon.moves.length}}</p>
-      </div>
-      <div class="uk-card-footer" style="width: 650px; justify-content: center; display: flex;">
-        <button class="uk-button uk-button-primary" type="button" (click)="showLessDetails()" style="margin-top: 20px;">Return to List</button>
-      </div>
-    </div>
-  </div>
-</div>
+</div> -->

@@ -3,6 +3,7 @@ import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 // loads the Icon plugin
 UIkit.use(Icons);
@@ -52,47 +53,58 @@ export class AppComponent implements OnInit, AfterViewInit {
   selectedPokemon: Pokemon;
   apiURL = 'https://pokeapi.co/api/v2/pokemon';
   showDetails = false;
+  data = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {
+    // fetch('https://pokeapi.co/api/v2/pokemon?limit=10&offset=0')
+    //   .then(res => res.json())
+    //   .then((data) => {
+    //     this.data = data;
+    //     console.log('DATA:', data);
+    //   })
+  }
 
   ngOnInit(): void {
-    for (let i = 0; i < 200; i++) {
-      this.getPokemonData(i + 1).subscribe(res => {
-        this.pokedex[i] = {
-          abilities: res.abilities,
-          base_experience: res.base_experience,
-          height: res.height,
-          id: res.id,
-          sprites: res.sprites,
-          is_default: res.is_default,
-          location_area_encounters: res.location_area_encounters,
-          moves: res.moves,
-          name: res.name.charAt(0).toUpperCase() + res.name.slice(1),
-          order: res.order,
-          weight: res.weight,
-        };
-      });
-    }
-    console.log(this.pokedex);
+    // for (let i = 0; i < 200; i++) {
+    //   this.getPokemonData(i + 1).subscribe(res => {
+    //     this.pokedex[i] = {
+    //       abilities: res.abilities,
+    //       base_experience: res.base_experience,
+    //       height: res.height,
+    //       id: res.id,
+    //       sprites: res.sprites,
+    //       is_default: res.is_default,
+    //       location_area_encounters: res.location_area_encounters,
+    //       moves: res.moves,
+    //       name: res.name.charAt(0).toUpperCase() + res.name.slice(1),
+    //       order: res.order,
+    //       weight: res.weight,
+    //     };
+    //   });
+    // }
+    // console.log(this.pokedex);
   }
 
   ngAfterViewInit() {
-    // // TODO: Probably place this in a service...
-    // // Get a references to the host app. Also have
-    // // host app cache events if main app hasn't loaded
-    // // yet. TEMP for now is to delay.
-    // setTimeout(() => {
-    //   const hostApp = window['__hostapp__'];
-    //   if (hostApp) {
-    //     const listener = hostApp.getMainAppListener();
-    //     if (listener) {
-    //       listener.emit('main.app.ready', {
-    //         title: this.title,
-    //         id: 'ronbravo-pkd-pokemon-inspector-ang8',
-    //       });
-    //     }
-    //   }
-    // }, 1000);
+    // TODO: Probably place this in a service...
+    // Get a references to the host app. Also have
+    // host app cache events if main app hasn't loaded
+    // yet. TEMP for now is to delay.
+    setTimeout(() => {
+      const hostApp = window['__hostapp__'];
+      if (hostApp) {
+        const listener = hostApp.getMainAppListener();
+        if (listener) {
+          listener.emit('main.app.ready', {
+            title: this.title,
+            id: 'ronbravo-pkd-pokemon-inspector-ang8',
+          });
+        }
+      }
+    }, 1000);
   }
 
   /**
@@ -104,26 +116,26 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   showMoreDetails(id: number) {
-    this.showDetails = true;
+    // this.showDetails = true;
 
-    this.getPokemonData(id).subscribe(res => {
-      this.selectedPokemon = {
-        abilities: res.abilities,
-        base_experience: res.base_experience,
-        height: res.height,
-        id: res.id,
-        sprites: res.sprites,
-        is_default: res.is_default,
-        location_area_encounters: res.location_area_encounters,
-        moves: res.moves,
-        name: res.name.charAt(0).toUpperCase() + res.name.slice(1),
-        order: res.order,
-        weight: res.weight,
-      };
-    });
+    // this.getPokemonData(id).subscribe(res => {
+    //   this.selectedPokemon = {
+    //     abilities: res.abilities,
+    //     base_experience: res.base_experience,
+    //     height: res.height,
+    //     id: res.id,
+    //     sprites: res.sprites,
+    //     is_default: res.is_default,
+    //     location_area_encounters: res.location_area_encounters,
+    //     moves: res.moves,
+    //     name: res.name.charAt(0).toUpperCase() + res.name.slice(1),
+    //     order: res.order,
+    //     weight: res.weight,
+    //   };
+    // });
   }
 
   showLessDetails() {
-    this.showDetails = false;
+    // this.showDetails = false;
   }
 }

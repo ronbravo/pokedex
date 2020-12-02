@@ -2,6 +2,9 @@
   "name": "@ronbravo/pkd-app-base-ang8",
   "version": "0.1.0",
   "private": true,
+  "config": {
+    "port": 5004
+  },
   "scripts": {
     "app": "npm run app:server & npm run build -- --watch",
     "app:server": "node .app/server.js ",

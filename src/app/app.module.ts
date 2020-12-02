@@ -5,11 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmptyRouteComponent } from './empty-route/empty-route.component';
+import { ShowPokemonComponent } from './component/show-pokemon/show-pokemon.component';
+import { ShowListComponent } from './component/show-list/show-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmptyRouteComponent
+    EmptyRouteComponent,
+    ShowPokemonComponent,
+    ShowListComponent
   ],
   imports: [
     BrowserModule,
